@@ -13,7 +13,7 @@ start = time.time()
 
 sc.stop()
 sc = pyspark.SparkContext()
-review = sc.textFile('/Users/zailipeng/Desktop/my_research/Important_information/books/CS/Inf553/HW2/review.json')
+review = sc.textFile(input path)
 RErdd = review.map(json.loads).map(lambda row: (row['business_id'],row['user_id'])).persist()
 # STrdd = RErdd.groupByKey().map(lambda a: (a[0], (sum(a[1]), len(a[1]))))
 
